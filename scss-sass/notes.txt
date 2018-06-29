@@ -1,0 +1,10 @@
+Sassy Style Sheet VS Syntactically Awesome Stylesheet
+SCSS VS SASS
+============
+
+SCSS has got curly braces so it more closer to css
+
+SASS doesn't use curly braces and you have to properly indent the code
+
+
+
