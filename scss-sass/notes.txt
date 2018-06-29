@@ -1,3 +1,5 @@
+https://sass-lang.com/
+
 Sassy Style Sheet VS Syntactically Awesome Stylesheet
 SCSS VS SASS
 ============
@@ -6,6 +8,78 @@ SCSS has got curly braces and semi colons so it more closer to css
 
 SASS doesn't use curly braces and semi colons and you have to properly indent the code
 In SASS each property in new line coz there are no emi colons
+
+Sublime Packages
+- SASS
+- SASS Build
+- SublimeOnSaveBuild
+Sass build builds css from sass
+Use emmet to write sass
+
+sublimeonsavebuild bug > does not treat partials as partials (e.g. variable partials)
+
+Settings for sublimeonsavebuild >> 
+
+sublime menu >  preferences > package settings > sublimeonsavebuild > settings - user > copy paste code from txt file > SublimeOnSaveBuild.txt
+
+{
+    "filename_filter": "(/|\\\\|^)(?!_)(\\w+)\\.(css|js|sass|less|scss)$",
+    "build_on_save": 1
+}
+
+
+install sass
+============
+https://rubyinstaller.org/
+> download and install ruby without devkit
+and open cmd
+
+go to 
+c:\Users\<pc username>
+
+> gem install sass
+Check for installation status
+> sass -v
+
+Open sass file in sublime and run build - if it throws error, you have not set environment path
+
+
+
+
+sass to css converters
+=======================
+https://sass2css.herokuapp.com
+https://www.sassmeister.com
+http://beautifytools.com/sass-compiler.php
+
+scss to css converters
+======================
+http://beautifytools.com/scss-compiler.php
+
+css to sass
+===========
+https://www.css2scss.com
+
+
+
+variable
+--------
+$main-color: #666;
+usage
+body {color: $main-color;}
+
+partial
+-------
+partial file name >> _variable.scss
+import method
+@import "variable";
+
+mixins
+------
+reusable pieces of codes
+kind of variable that holds a block of code (code contains multiple properties)
+
+
 
 
 

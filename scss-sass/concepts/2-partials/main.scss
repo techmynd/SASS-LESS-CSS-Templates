@@ -1,0 +1,22 @@
+@import "variable";
+@import "colors";
+// partial file does not need _ (underscore) or .scss (file extension)
+
+body {
+    color: $main-color;
+    font-family: $main-font;
+    p {
+      color: $main-color;
+    }
+    a {
+        color: $links-color;
+    }
+    a:hover {
+        color: $links-hover-color;
+    }
+}
+
+h1 {
+  color: $headings-color;
+  font-family: $headings-font;
+}

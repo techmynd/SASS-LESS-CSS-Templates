@@ -1,0 +1,34 @@
+// === COLORS ===
+$main-color: #666;
+$headings-color: #000;
+$links-color: #4a39e2;
+$links-hover-color: #000;
+
+// === FONTS ===
+
+$main-font: 'Open Sans', sans-serif;
+$headings-font: 'Montserrat', sans-serif;
+
+// === SIZES ===
+
+$badge-custom-width: 40px;
+$badge-custom-height: 40px;
+
+body {
+    color: $main-color;
+    font-family: $main-font;
+    p {
+      color: $main-color;
+    }
+    a {
+        color: $links-color;
+    }
+    a:hover {
+        color: $links-hover-color;
+    }
+}
+
+h1 {
+  color: $headings-color;
+  font-family: $headings-font;
+}

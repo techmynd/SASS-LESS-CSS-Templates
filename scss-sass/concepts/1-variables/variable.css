@@ -1,0 +1,15 @@
+body {
+  color: #666;
+  font-family: "Open Sans", sans-serif; }
+  body p {
+    color: #666; }
+  body a {
+    color: #4a39e2; }
+  body a:hover {
+    color: #000; }
+
+h1 {
+  color: #000;
+  font-family: "Montserrat", sans-serif; }
+
+/*# sourceMappingURL=variable.css.map */
