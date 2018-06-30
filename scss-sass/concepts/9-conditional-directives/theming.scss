@@ -1,0 +1,28 @@
+// ==== SASS conditions ====
+
+// ALlowed values >> blue-beans, rogers-rovers
+
+// $brand: blue-beans; 
+$brand: rogers-rovers; 
+
+@mixin blue-beans {
+    @if $brand == blue-beans {
+        @content;
+    }
+}
+
+@mixin rogers-rovers {
+    @if $brand == rogers-rovers {
+        @content;
+    }
+}
+
+a {
+    @include blue-beans {
+        color: #000;
+    }
+
+    @include rogers-rovers {
+        color: #008000;
+    }
+}

@@ -1,0 +1,28 @@
+.box {
+  border-radius: 12px; }
+
+.bordered-box {
+  border-radius: 4px;
+  border: 1px solid #000; }
+
+.box1 {
+  z-index: 1; }
+
+.box2 {
+  z-index: 2; }
+
+.box3 {
+  z-index: 3; }
+
+.bordered-box-green {
+  border-radius: 10px;
+  border: 1px solid #098509;
+  background-color: #098509; }
+
+.shadowed-box {
+  box-shadow: 1px 1px 10px #000;
+  -moz-box-shadow: 1px 1px 10px #000;
+  -webkit-box-shadow: 1px 1px 10px #000;
+  -ms-box-shadow: 1px 1px 10px #000; }
+
+/*# sourceMappingURL=mixin-argument.css.map */

@@ -1,0 +1,19 @@
+// ==== SASS conditions ====
+
+$contrast: low;
+
+body {
+    @if $contrast == high {
+        color: #000;
+    }
+    @else if $contrast == low {
+        color: #999;
+    }
+    @else if $contrast == normal {
+        color: #333;
+    }
+    @else {
+        color: #000;
+    }
+}
+

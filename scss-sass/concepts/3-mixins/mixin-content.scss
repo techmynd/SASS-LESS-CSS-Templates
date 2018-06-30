@@ -1,0 +1,14 @@
+// ==== Passing content into mixins ====
+// ==== ie6 ====
+@mixin for-ie-6 {
+    // only apply to ie6 - * html is for ie6
+    * html {
+        @content;
+    }
+}
+
+@include for-ie-6 {
+    body {
+        font-size: 120%;
+    }
+}

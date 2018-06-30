@@ -1,0 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans);
+@import url(https://fonts.googleapis.com/css?family=Titllium+Web);
+h1 {
+  font-family: "Titllium Web", Georgia, serif; }
+
+p {
+  font-family: "Alegreya Sans", Arial, sans-serif; }
+
+/*# sourceMappingURL=google-font-import-mixin-based.css.map */

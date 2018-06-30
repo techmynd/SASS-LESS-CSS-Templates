@@ -1,0 +1,41 @@
+.error, .critical-error, .critical-most-error {
+  color: red;
+  font-size: 14px; }
+
+.critical-error {
+  font-weight: bold;
+  font-size: 20px; }
+
+/*
+
+// this is ok 
+.critical-error {
+    @extend .error;
+    @extend .red;
+ }
+// this is ok
+.critical-error {
+    @extend .error.red;
+ }
+// this is ok
+.critical-error {
+    @extend .error:hover;
+ }
+ // not ok ??????????????????? 
+ .critical-error {
+    @extend .error .red;
+ }
+
+ *** Also for media queries you can extend a class/selector that is inside that media query only
+
+ @media screen {
+     .foo {...}
+     .super-cta {
+         @extend .foo;
+         ...
+     }
+ }
+
+ */
+
+/*# sourceMappingURL=main.css.map */

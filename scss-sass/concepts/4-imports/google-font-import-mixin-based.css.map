@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGY,kEAAqD;AAArD,iEAAqD;AAajE,EAAG;EACC,WAAW,EAJA,8BAA8B;;AAO7C,CAAE;EACE,WAAW,EATH,kCAAkC",
+"sources": ["google-font-import-mixin-based.scss"],
+"names": [],
+"file": "google-font-import-mixin-based.css"
+}

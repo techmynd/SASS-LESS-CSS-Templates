@@ -1,0 +1,37 @@
+// ==== SASS functions ====
+$link-color: #4141d8;
+$background-color: #ac791a;
+
+// Darken a link color on hover
+a {
+    color: $link-color;
+    &:hover{
+        color: darken($link-color, 15%);
+    }
+}
+
+// Lighten background on hover
+.btn-box {
+    background-color: $background-color;
+    &:hover{
+        color: lighten($background-color, 15%);
+    }
+}
+
+// nice transition to link hover - it adds bottom border with transition on hover to the links
+#main-menu {
+    li {
+        display: inline-block;
+    }
+    a {
+        color:#000;
+        //border-bottom: 1px solid transparentize($color: #000000, $amount: 0);
+        border-bottom: 1px solid transparentize(#000000, 1);
+        transition: border-bottom 0.5s;
+        transition-timing-function: ease-in-out;
+        &:hover {
+            //border-bottom: 1px solid opacify($color: #000000, $amount: 0);
+            border-bottom: 1px solid opacify(#000, .5);
+        }
+    }
+}

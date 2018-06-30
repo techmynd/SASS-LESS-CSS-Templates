@@ -1,0 +1,21 @@
+// ==== SASS imports ====
+
+// ==== regular css imports
+/*
+@import url();
+@import "http://";
+@import "filename.css";
+@import "style" screen;
+*/
+
+// ==== SASS imports
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import "variable";
+/*variables will not be visibile in .css file*/
+// for file _variables.scss
+
+// or if you have directory for partials
+// @import "partials/variables";
+
+// or multiple imports
+// @import "variables", "mixins";

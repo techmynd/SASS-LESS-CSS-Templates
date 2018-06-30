@@ -1,0 +1,41 @@
+// ==== SASS media queries ====
+@mixin large-screens () {
+    @media all and (max-width:1199px) {
+        @content;
+    }
+}
+
+@mixin medium-screens () {
+    @media all and (max-width:991px) {
+        @content;
+    }
+}
+
+@mixin small-screens () {
+    @media all and (max-width:767px) {
+        @content;
+    }
+}
+
+@mixin tiny-screens () {
+    @media all and (max-width:480px) {
+        @content;
+    }
+}
+
+body {
+    font-size: 100%;
+    @include large-screens {
+        font-size: 100%;
+    }
+    @include medium-screens {
+        font-size: 110%;
+    }
+    @include small-screens {
+        font-size: 120%;
+    }
+    @include tiny-screens {
+        font-size: 130%;
+    }
+}
+

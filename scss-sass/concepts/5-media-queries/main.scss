@@ -1,0 +1,10 @@
+// ==== SASS media queries ====
+$content-width :600px;
+$full-width: 100%;
+
+#main {
+    width: $content-width;
+    @media only screen and (max-width: 960px) {
+        width: $full-width;
+    }
+}

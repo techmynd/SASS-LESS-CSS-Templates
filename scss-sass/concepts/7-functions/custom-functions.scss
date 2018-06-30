@@ -1,0 +1,44 @@
+// ==== SASS functions ====
+
+// syntax example
+@function sum($left, $right) {
+    @return $left + $right;
+}
+
+// function 2
+@function em($pixels, $context: 16px) {
+    @return ($pixels / $context) * 1em;
+}
+
+// custom grid system
+@function col-width($columns:12, $page-width: 100%, $gap: 1%) {
+    @return ($page-width - $gap*($columns - 1)) / $columns;
+}
+
+@function strip-unit($value) {
+    @return $value / ($value*0 +1);
+}
+
+// function 2 usage
+body {
+    font-size: em(18px);
+}
+
+// custom grid system usage
+// single column width in layout // define total columns as 8 and store single column value in variable
+$col: col-width($columns: 8);
+
+#content {
+    float: left; 
+    width: 6*$col;
+}
+
+#sidebar {
+    float: right; 
+    width: 2*$col;
+
+    li {
+        padding: em(16px) em(20px);
+    }
+}
+

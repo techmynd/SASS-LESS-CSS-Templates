@@ -1,0 +1,14 @@
+body {
+  font-size: 1.125em; }
+
+#content {
+  float: left;
+  width: 69.75%; }
+
+#sidebar {
+  float: right;
+  width: 23.25%; }
+  #sidebar li {
+    padding: 1em 1.25em; }
+
+/*# sourceMappingURL=custom-functions.css.map */

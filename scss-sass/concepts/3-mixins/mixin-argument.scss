@@ -1,0 +1,60 @@
+// ==== mixins with arguments
+// ==== single argument for border radius
+@mixin rounded ($radius) {
+    border-radius: $radius;
+}
+
+// ==== single argument with default value
+//@mixin mxn-radius ($radius:10px) {border-radius: $radius;}
+@mixin mxn-zindex ($depth:1) {
+    z-index: $depth;
+}
+
+// ==== multiple arguments for border radius and border
+@mixin border-and-radius ($radius, $border) {
+    border-radius: $radius;
+    border: $border;
+}
+
+// ==== single argument with multiple properties - varargs // cross browser multiple prperties
+@mixin mxn-bx-shadow ($shadow...) {
+    box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+    -ms-box-shadow: $shadow;
+}
+
+// ==== single argument output
+.box {
+    @include rounded (12px);
+}
+
+// ==== multiple arguments output
+.bordered-box {
+    @include border-and-radius (4px, 1px solid #000);
+}
+
+// ==== single arguments, default value, and then changing that default value starts
+.box1 {
+    @include mxn-zindex; // .. other properties
+}
+
+.box2 {
+    @include mxn-zindex(2); // .. other properties
+}
+
+.box3 {
+    @include mxn-zindex(3); // .. other properties
+}
+
+// ==== single arguments, default value, and then changing that default value ends
+// ==== multiple arguments - same mixin, different values, different output
+.bordered-box-green {
+    @include border-and-radius (10px, 1px solid #098509);
+    background-color: #098509;
+}
+
+// === vararg usage
+.shadowed-box {
+    @include mxn-bx-shadow (1px 1px 10px #000);
+}

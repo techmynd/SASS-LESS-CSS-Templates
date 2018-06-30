@@ -1,0 +1,23 @@
+// ==== SASS imports ====
+// ==== formula to get multiple fonts
+@mixin google-font ($font) {
+    @import url(https://fonts.googleapis.com/css?family=#{$font}); 
+    // #{$font} << this is how we seperate variable from rest of url
+}
+
+// ==== include fonts
+@include google-font ("Alegreya+Sans");
+@include google-font ("Titllium+Web");
+
+// ==== create variables
+$text-font: "Alegreya Sans", Arial, sans-serif;
+$heading-font: "Titllium Web", Georgia, serif;
+
+// ==== use fonts
+h1 {
+    font-family: $heading-font;
+}
+
+p {
+    font-family: $text-font;
+}

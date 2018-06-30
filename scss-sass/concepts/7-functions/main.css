@@ -1,0 +1,21 @@
+a {
+  color: #4141d8; }
+  a:hover {
+    color: #2323aa; }
+
+.btn-box {
+  background-color: #ac791a; }
+  .btn-box:hover {
+    color: #e0a332; }
+
+#main-menu li {
+  display: inline-block; }
+#main-menu a {
+  color: #000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  transition: border-bottom 0.5s;
+  transition-timing-function: ease-in-out; }
+  #main-menu a:hover {
+    border-bottom: 1px solid black; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,4 +1,8 @@
 https://sass-lang.com/
+https://sass-lang.com/guide
+https://sass-lang.com/documentation/file.SASS_REFERENCE.html
+https://www.tutorialspoint.com/sass/index.htm
+
 
 Sassy Style Sheet VS Syntactically Awesome Stylesheet
 SCSS VS SASS
@@ -61,6 +65,27 @@ css to sass
 https://www.css2scss.com
 
 
+concatination
+...#{$variable}...
+
+in the files in this repo scss is sass file and same name .css is its output
+
+SASS imports
+
+@import "variables";
+// for file _variables.scss
+@import "mixins";
+// for file _mixins.scss
+or
+@import "variables", "mixins";
+
+comments
+--------
+// ==== comment ====
+or
+/* comment */
+Comments do not get printed in css output from scss
+
 
 variable
 --------
@@ -78,6 +103,176 @@ mixins
 ------
 reusable pieces of codes
 kind of variable that holds a block of code (code contains multiple properties)
+
+>> define
+@mixin mxn-warning {
+    background-color: #da9412;
+    color: #fff;
+}
+
+>> Use
+.btn-warning {
+    @include mxn-warning;
+    font-size: 14px;
+}
+
+>> root level implementation
+@include mxn-warning;
+
+mixins can be nested.
+
+@mixin mxn-error-block {
+    @include mxn-error;
+    font-weight: bold;
+    position: relative;
+}
+
+minin with arguments
+--------------------
+
+@mixin rounded ($radius) {
+    border-radius: $radius;
+}
+>> usage
+.box {@include rounded (12px);}
+
+
+@mixin awesome($color, $font-size) { ... }
+
+mixin with one argument and a default value
+--------------------------------------------
+@mixin tiny($size: 8px) { ... }
+
+How can you include a mixin defined like this: @mixin fancy($color: #672195) { ... }
+
+@include fancy;
+@include fancy(#672195);
+@include fancy($color: #672195);
+
+define a mixin with a vararg (variable argument)
+@mixin add-backgrounds($backgrounds...) { ... }
+
+
+include a mixin called ie7-only and change the style of the body tag
+@include ie7-only {  body { ... }  }
+
+create a mixin that uses content passing
+@mixin ie7-only { ... @content; ... } 
+
+functions
+=========
+syntax
+@function colors($color1, $color2) { ... }
+
+a {
+    color: $link-color;
+    &:hover{
+        color: darken($link-color, 15%);
+    }
+}
+
+
+inheritance
+===========
+similar to mixing / reuse code / extend class
+
+.error {
+    color: red;
+}
+
+.critical-error {
+    @extend .error;
+    font-weight: bold;
+}
+
+you cant extend selector from outside a directive. For example to extend a class in media query, it has to exist in same media query first. Than u can extend it in another class in that media query.
+
+.critical-most-error {
+    @extend .error;
+    @extend .error-red !optional;
+    // Use !optional flag when you are not sure that a class exists or not. This will not stop preprocessor from compiling code. Otherwise compiler will stop.
+}
+
+
+
+inheretance / extend is better than mixins //// less repetition and less code with extend
+
+
+conditional directives
+========================
+
+$contrast: low;
+
+body {
+    @if $contrast == high {
+        color: #000;
+    }
+    @else if $contrast == low {
+        color: #999;
+    }
+    @else if $contrast == normal {
+        color: #333;
+    }
+    @else {
+        color: #000;
+    }
+}
+
+
+Loops
+======
+
+$speakers: javed, ron, bob;
+@each $speaker in $speakers {
+    .#{$speaker}-profile {
+        background-image: url('assets/images/#{$speaker}.png');
+    }
+}
+
+
+$font-sizes: (tiny: 8px, small: 11px, medium: 13px, large: 18px);
+@each $name, $size in $font-sizes {
+    .#{$name} {
+        font-size: $size;
+    }
+}
+
+
+
+software
+========
+
+http://oddbird.net/susy/
+http://breakpoint-sass.com/
+http://compass-style.org/
+
+commands
+========
+
+gem installer needs ruby to be installed in system
+
+>gem list
+>gem uninstall <package name>
+
+>gem install susy
+>gem install compass
+>gem install breakpoint
+
+>npm install susy
+>npm install compass
+>npm install breakpoint
+
+sublime offers packages for above frameworks 
+susy snippets, compass build system
+
+
+
+
+
+
+
+
+
 
 
 

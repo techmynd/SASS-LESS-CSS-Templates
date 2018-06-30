@@ -1,0 +1,16 @@
+body {
+  font-size: 100%; }
+  @media all and (max-width: 1199px) {
+    body {
+      font-size: 100%; } }
+  @media all and (max-width: 991px) {
+    body {
+      font-size: 110%; } }
+  @media all and (max-width: 767px) {
+    body {
+      font-size: 120%; } }
+  @media all and (max-width: 480px) {
+    body {
+      font-size: 130%; } }
+
+/*# sourceMappingURL=media-queries-content-directive.css.map */
