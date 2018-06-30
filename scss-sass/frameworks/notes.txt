@@ -1,0 +1,25 @@
+software
+========
+
+http://oddbird.net/susy/
+http://breakpoint-sass.com/
+http://compass-style.org/
+
+commands
+========
+
+gem installer needs ruby to be installed in system
+
+>gem list
+>gem uninstall <package name>
+
+>gem install susy
+>gem install compass
+>gem install breakpoint
+
+>npm install susy
+>npm install compass
+>npm install breakpoint
+
+sublime offers packages for above frameworks 
+susy snippets, compass build system
