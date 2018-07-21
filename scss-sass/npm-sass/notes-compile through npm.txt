@@ -1,0 +1,41 @@
+npm install node-sass
+npm install node-sass --save-dev
+
+
+npm install jquery --save
+
+--save-dev >>> development dependency
+--save >>> dependency needed by project
+
+compile sass file
+=================
+
+in package.json this should be mentioned
+sass/main.scss is scss file location 
+sass/main.css is the out put file
+
+
+"scripts": {
+    "compile:sass": "node-sass sass/main.scss sass/main.css"
+  },
+
+
+run command: 
+npm run compile:sass
+
+this will look into json file for scss file and output file and create css output
+
+add -w for wtch handler in script
+=================================
+
+"scripts": {
+    "compile:sass": "node-sass sass/main.scss sass/main.css -w"
+  },
+
+now run command 
+npm run compile:sass
+
+and keep updating scss and the css will be generating on each change of code
+
+
+

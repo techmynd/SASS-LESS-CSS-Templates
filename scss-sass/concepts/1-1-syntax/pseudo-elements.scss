@@ -1,0 +1,14 @@
+// === PSEUDO ELEMENTS ===
+
+a {
+	color: #000;
+	&:hover {
+		color: #ff6600;
+	}
+	&:focus {
+		color: #ff6600;	
+	}
+	&:first-child {
+		text-decoration: underline;
+	}
+}

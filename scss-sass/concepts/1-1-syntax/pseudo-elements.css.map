@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,CAAE;EACD,KAAK,EAAE,IAAI;EACX,OAAQ;IACP,KAAK,EAAE,OAAO;EAEf,OAAQ;IACP,KAAK,EAAE,OAAO;EAEf,aAAc;IACb,eAAe,EAAE,SAAS",
+"sources": ["pseudo-elements.scss"],
+"names": [],
+"file": "pseudo-elements.css"
+}

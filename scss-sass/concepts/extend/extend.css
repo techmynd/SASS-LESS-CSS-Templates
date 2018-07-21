@@ -1,0 +1,13 @@
+.btn-main, .btn-main:link, .btn-main:hover, .btn-main:focus {
+  color: #fff;
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 100px; }
+
+.btn-main:link {
+  background-color: #333; }
+.btn-main:hover, .btn-main:focus {
+  background-color: #000; }
+
+/*# sourceMappingURL=extend.css.map */
