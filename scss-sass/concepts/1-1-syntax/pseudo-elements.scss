@@ -12,3 +12,22 @@ a {
 		text-decoration: underline;
 	}
 }
+
+
+.header {
+ 	font-size:20px;
+ 	
+ 	&__text-box {
+  		color:#000;
+ 	}
+}
+
+
+.row { 
+	background-color: #eee;
+ 
+	&:not(:last-child) {
+  		margin-right:20px;	
+ 	}
+}
+
