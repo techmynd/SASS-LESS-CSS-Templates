@@ -12,4 +12,7 @@ h1 {
   color: #000;
   font-family: "Montserrat", sans-serif; }
 
+.col-1-of-2 {
+  width: calc((100% - 1rem) / 2); }
+
 /*# sourceMappingURL=variable.css.map */

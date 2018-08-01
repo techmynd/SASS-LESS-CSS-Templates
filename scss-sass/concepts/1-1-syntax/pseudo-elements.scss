@@ -31,3 +31,9 @@ a {
  	}
 }
 
+
+$gutter-horizontal: 1rem;
+// if we use a variable inside calculation we use #{$varname}
+.col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+}
