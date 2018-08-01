@@ -1,0 +1,22 @@
+sass/
+ main.scss
+ base/
+  _base.scss (css resets)
+  _animations.scss
+  _typography.scss
+  _utilities.scss
+ abstracts/
+  _functions.scss
+  _mixins.scss
+  _variables.scss
+ components/
+  _button.scss
+ layout/
+  _grid.scss
+  _header.scss
+  _footer.scss
+  _sidebar.scss
+ pages/
+  _home.scss
+ themes/
+ vendors/
