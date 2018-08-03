@@ -1,0 +1,107 @@
+.cflip {
+  perspective: 1500px;
+  -moz-perspective: 1500px;
+  position: relative;
+  height: 500px; }
+  .cflip__side {
+    background-color: orangered;
+    font-size: 20px;
+    height: 500px;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    overflow: hidden; }
+    .cflip__side--front {
+      background-color: #fff; }
+    .cflip__side--back {
+      transform: rotateY(180deg); }
+      .cflip__side--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .cflip__side--back-2 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+      .cflip__side--back-3 {
+        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+  .cflip:hover .cflip__side--front {
+    transform: rotateY(-180deg); }
+  .cflip:hover .cflip__side--back {
+    transform: rotateY(0deg); }
+  .cflip__picture {
+    background-size: cover;
+    height: 230px;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    .cflip__picture--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url("city.jpg"); }
+    .cflip__picture--2 {
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url("city.jpg"); }
+    .cflip__picture--3 {
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url("city.jpg"); }
+  .cflip__heading {
+    font-size: 28px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #fff;
+    position: absolute;
+    top: 120px;
+    right: 20px;
+    text-align: right;
+    width: 200px; }
+  .cflip__heading-span {
+    padding: 6px 10px;
+    line-height: 1.8;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone; }
+    .cflip__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+    .cflip__heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
+    .cflip__heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+  .cflip__details {
+    text-align: center; }
+    .cflip__details ul {
+      list-style: none;
+      width: 80%;
+      padding: 0;
+      margin: 20px auto 0 auto; }
+      .cflip__details ul li {
+        text-align: center;
+        font-size: 15px;
+        padding: 10px; }
+        .cflip__details ul li:not(:last-child) {
+          border-bottom: 1px solid #eee; }
+  .cflip__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+  .cflip__price-box {
+    color: #fff; }
+  .cflip__price-only {
+    font-size: 14px;
+    text-transform: uppercase; }
+  .cflip__price-value {
+    font-size: 60px;
+    font-weight: 100;
+    margin-bottom: 50px; }
+  .cflip__btn--white {
+    padding: 16px 40px;
+    border-radius: 40px;
+    background-color: #fff;
+    color: #000;
+    font-size: 14px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase; }
+    .cflip__btn--white:hover {
+      background-color: #eee;
+      text-decoration: none;
+      color: #000; }
+
+/*# sourceMappingURL=card.css.map */
