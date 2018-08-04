@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>CSS</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="radio.css">
+
+  <style type="text/css">
+
+	body {background-color: #eee;}
+
+  </style>
+
+</head>
+<body>
+
+<br><br>
+
+<div class="container">
+    
+  <div class="cr">
+    <input class="cr__radio-input" name="option1" type="radio" id="radio-1" checked>
+    <label class="cr__radio-label" for="radio-1">
+      <span class="cr__radio-button"></span>
+      Option 1
+    </label>
+  </div>
+
+  <div class="cr">
+    <input class="cr__radio-input" name="option1" type="radio" id="radio-2">
+    <label class="cr__radio-label" for="radio-2">
+      <span class="cr__radio-button"></span>
+      Option 2
+    </label>
+  </div>
+
+  <div class="cr">
+    <input class="cr__radio-input" name="option1" type="radio" id="radio-3">
+    <label class="cr__radio-label" for="radio-3">
+      <span class="cr__radio-button"></span>
+      Option 3
+    </label>
+  </div>
+    
+
+    <br><br>
+
+    label for="radio-2" <br>
+    Basically for allows us to identify the input <br>
+    that is why on label click input gets selected <br>
+    if radio gets checked we can do like this <br>
+    .cr__radio-input:checked ~ .cr__radio-label .cr__radio-button::after {  opacity: 1; }
+
+</div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  
+</body>
+</html>

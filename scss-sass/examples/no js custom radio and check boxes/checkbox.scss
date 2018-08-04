@@ -1,0 +1,36 @@
+.cr {
+	
+	&__checkbox-input {
+
+	}
+
+	&__checkbox-label {
+		position: relative;
+	}
+
+	&__checkbox-button {
+		
+		position: absolute;
+		content: "";
+		position: absolute;
+		right: -20px; top: 5px; 
+		width: 14px; height: 14px;
+		border: 2px solid #000;
+
+		&::after {
+			content: "\2713";
+			position: absolute;
+			top: 50%; left: 50%; 
+			transform: translate(-30%, -63%);
+			opacity:0;
+			font-weight: bold;
+			transition: all 0.3s ease;
+		}
+	}
+
+	&__checkbox-input:checked ~ &__checkbox-label &__checkbox-button::after {
+		opacity:1;
+	}
+
+}
+

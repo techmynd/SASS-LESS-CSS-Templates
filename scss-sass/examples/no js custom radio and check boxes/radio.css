@@ -1,0 +1,28 @@
+.cr__radio-label {
+  position: relative; }
+.cr__radio-button {
+  position: absolute;
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #000;
+  border-radius: 50%; }
+  .cr__radio-button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: #000;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s ease; }
+.cr__radio-input:checked ~ .cr__radio-label .cr__radio-button::after {
+  opacity: 1; }
+
+/*# sourceMappingURL=radio.css.map */
