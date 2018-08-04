@@ -276,6 +276,11 @@ susy snippets, compass build system
 
 
 
+Useful resources
+================
+https://gist.github.com/jareware/4738651
+https://github.com/engageinteractive/core/tree/master/src/scss
+https://engageinteractive.co.uk/blog/top-10-scss-mixins
 
 
 

@@ -1,0 +1,57 @@
+/*
+	Form input placeholder text
+	example:
+	input,
+	textarea {
+		@include input-placeholder {
+			color: $grey;
+		}
+	}
+*/
+/*
+	CSS Triangle
+	used for creating CSS only triangles
+	example:
+	.element {
+
+		&::before {
+			@include css-triangle(blue, down);
+		}
+	}
+*/
+/*
+.box:after {
+    @include fa-icon-sudo;
+    content: "\f007";
+}
+*/
+/*
+.tab-button {
+     @include rounded-corner(5px); 
+}
+*/
+/*
+.cta-btn {
+    @include btn-background(#666);
+}
+*/
+/*extending classes*/
+.cat {
+  background: gray;
+  border: 1px solid red;
+  font-weight: bold;
+  font-size: 50px;
+  color: red;
+  padding: 20px;
+  color: white; }
+
+.dog {
+  background: gray;
+  border: 1px solid red;
+  font-weight: bold;
+  font-size: 50px;
+  color: red;
+  padding: 20px;
+  color: black; }
+
+/*# sourceMappingURL=_mixins.css.map */
