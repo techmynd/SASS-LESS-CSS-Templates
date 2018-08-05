@@ -1,0 +1,71 @@
+/*
+0 - 600px > phone
+600 - 900px > tablet portrait
+900 - 1200px > tablet landscape
+1200 - 1800px > desktop
+1800 - + > 
+
+important > rem is not best for media queries
+em is the best unit for media queries
+
+*/
+
+/*=========================*/
+
+@mixin respond-phone {
+	@media (max-width: 600px) { @content };
+}
+
+/* usage
+body {
+
+  	 font-size: 62.5%;
+
+  @include respond-phone {
+     font-size: 30%;	
+  }
+}
+*/
+
+/*=========================*/
+
+// em is the unit to go with media queries
+@mixin respond($breakpoint) {
+
+	@if $breakpoint == tab-landscape {
+		//@media (max-width: 1200px) { @content };
+		@media (max-width: 75em) { @content }; // 1200px/16px = 75em
+	}
+
+	@if $breakpoint == tab-portrait {
+		//@media (max-width: 900px) { @content };
+		@media (max-width: 56.25em) { @content }; // 900px/16px = 56.25em
+	}
+
+	@if $breakpoint == phone {
+		//@media (max-width: 600px) { @content };
+		@media (max-width: 37.5em) { @content }; // 600px/16px = 37.5em
+	}
+
+	@if $breakpoint == desktop {
+		//@media (min-width: 1800px) { @content }; 
+		@media (min-width: 112.5em) { @content }; // 1800px/16px = 112.5em
+	}
+
+}
+
+/* usage
+body {
+
+  font-size: 20px;
+
+  @include respond(phone) {
+     font-size: 30%;
+  }
+
+  @include respond(desktop) {
+     font-size: 62.5%;
+  }
+}
+*/
+
