@@ -52,6 +52,14 @@ body {
 		@media (min-width: 112.5em) { @content }; // 1800px/16px = 112.5em
 	}
 
+	// if device is not small mobile devive use large images
+
+	@if $breakpoint == notmoile {
+		// resolution greater than mobile 
+		// for images // use large images with this
+		@media (min-resolution: 192dpi) and (min-width: 600px) { @content };
+	}
+
 }
 
 /* usage
@@ -66,6 +74,18 @@ body {
   @include respond(desktop) {
      font-size: 62.5%;
   }
+
 }
 */
 
+/*
+header {
+	
+	background-image:url('small-image.jpg');
+	
+	@include respond(notmoile) {
+    	background-image:url('large-image.jpg');
+  	}
+
+}
+*/

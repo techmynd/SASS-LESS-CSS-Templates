@@ -1,0 +1,8 @@
+
+// if device is not small mobile devive use large images
+
+@media (min-resolution: 192dpi) {
+	.header {	
+		background-image: url('large-image.jpg');
+	}
+}
