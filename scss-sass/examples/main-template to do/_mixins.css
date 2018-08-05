@@ -54,4 +54,10 @@
   padding: 20px;
   color: black; }
 
+/*
+.class {
+    @include absCenter;
+}
+*/
+
 /*# sourceMappingURL=_mixins.css.map */
