@@ -57,7 +57,15 @@ body {
 	@if $breakpoint == notmoile {
 		// resolution greater than mobile 
 		// for images // use large images with this
-		@media (min-resolution: 192dpi) and (min-width: 600px) { @content };
+		
+		// @media (min-resolution: 192dpi) and (min-width: 600px) { @content };
+
+		// , is 'or' - 37.5em is 600px and -webkit-min-device-pixel-ratio is dafari check/fix
+
+		@media (min-resolution: 192dpi) and (min-width: 37.5em),  
+		@media (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), 
+        (min-width: 125em) { @content };
+
 	}
 
 }
