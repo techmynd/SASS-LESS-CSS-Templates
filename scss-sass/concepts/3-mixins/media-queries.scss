@@ -13,7 +13,7 @@ em is the best unit for media queries
 /*=========================*/
 
 @mixin respond-phone {
-	@media (max-width: 600px) { @content };
+	@media only screen and (max-width: 600px) { @content };
 }
 
 /* usage
@@ -34,27 +34,28 @@ body {
 
 	@if $breakpoint == tab-landscape {
 		//@media (max-width: 1200px) { @content };
-		@media (max-width: 75em) { @content }; // 1200px/16px = 75em
+		@media only screen and (max-width: 75em) { @content }; // 1200px/16px = 75em
 	}
 
 	@if $breakpoint == tab-portrait {
 		//@media (max-width: 900px) { @content };
-		@media (max-width: 56.25em) { @content }; // 900px/16px = 56.25em
+		@media only screen and (max-width: 56.25em) { @content }; // 900px/16px = 56.25em
 	}
 
 	@if $breakpoint == phone {
 		//@media (max-width: 600px) { @content };
-		@media (max-width: 37.5em) { @content }; // 600px/16px = 37.5em
+		@media only screen and (max-width: 37.5em) { @content }; // 600px/16px = 37.5em
 	}
 
 	@if $breakpoint == desktop {
 		//@media (min-width: 1800px) { @content }; 
-		@media (min-width: 112.5em) { @content }; // 1800px/16px = 112.5em
+		@media only screen and (min-width: 112.5em) { @content }; // 1800px/16px = 112.5em
 	}
 
 	// if device is not small mobile devive use large images
 
 	@if $breakpoint == notmoile {
+		
 		// resolution greater than mobile 
 		// for images // use large images with this
 		
@@ -62,11 +63,18 @@ body {
 
 		// , is 'or' - 37.5em is 600px and -webkit-min-device-pixel-ratio is dafari check/fix
 
-		@media (min-resolution: 192dpi) and (min-width: 37.5em),  
-		@media (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), 
-        (min-width: 125em) { @content };
+		@media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),  
+		@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), 
+        @media only screen and (min-width: 125em) { @content };
 
 	}
+
+	@if $breakpoint == nohover {
+		// this is a touch device where we don't have hover - so change rotating stuff
+		@media only screen and (hover: none) { @content };
+	}
+
+
 
 }
 
