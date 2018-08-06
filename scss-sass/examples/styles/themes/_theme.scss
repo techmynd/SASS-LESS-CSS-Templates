@@ -1,0 +1,58 @@
+// ==== SASS conditions ====
+
+// Allowed Theme Values >> theme-black, theme-green, theme-blue
+
+$theme: theme-black;
+
+@mixin theme-black {
+    @if $theme == theme-black {
+        @content;
+    }
+}
+
+@mixin theme-green {
+    @if $theme == theme-green {
+        @content;
+    }
+}
+
+@mixin theme-blue {
+    @if $theme == theme-blue {
+        @content;
+    }
+}
+
+/* usage
+a {
+    @include theme-black {
+        color: #000;
+    }
+
+    @include theme-green {
+        color: green;
+    }
+}
+*/
+
+// Font color sharpness
+
+$contrast: normal;
+
+body {
+    @if $contrast == high {
+        color: #000;
+    }
+    @else if $contrast == normal {
+        color: #333;
+    }
+    @if $contrast == medium {
+        color: #666;
+    }
+    @else if $contrast == low {
+        color: #999;
+    }
+    @else {
+        color: #000;
+    }
+}
+

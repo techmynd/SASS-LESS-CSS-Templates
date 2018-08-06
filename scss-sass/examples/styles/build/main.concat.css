@@ -1,0 +1,505 @@
+
+/* ABSTRACTS
+========================================================================== */
+/*
+	Easing/Timing
+*/
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Open+Sans:300,400,600,700,800");
+body {
+  color: #666;
+  font-family: "Open Sans", sans-serif; }
+  body p {
+    color: #666; }
+  body a {
+    color: #4a39e2; }
+  body a:hover {
+    color: #000; }
+
+h1 {
+  color: #000;
+  font-family: "Montserrat", sans-serif; }
+
+.col-1-of-2 {
+  width: calc((100% - 1rem) / 2); }
+
+a {
+  color: #4141d8; }
+  a:hover {
+    color: #2323aa; }
+
+.btn-box {
+  background-color: #ac791a; }
+  .btn-box:hover {
+    color: #e0a332; }
+
+#main-menu li {
+  display: inline-block; }
+
+#main-menu a {
+  color: #000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  transition: border-bottom 0.5s;
+  transition-timing-function: ease-in-out; }
+  #main-menu a:hover {
+    border-bottom: 1px solid black; }
+
+/*
+	Form input placeholder text
+	example:
+	input,
+	textarea {
+		@include input-placeholder {
+			color: $grey;
+		}
+	}
+*/
+/*
+	CSS Triangle
+	used for creating CSS only triangles
+	example:
+	.element {
+
+		&::before {
+			@include css-triangle(blue, down);
+		}
+	}
+*/
+/*
+.box:after {
+    @include fa-icon-sudo;
+    content: "\f007";
+}
+*/
+/*
+.tab-button {
+     @include rounded-corner(5px); 
+}
+*/
+/*
+.cta-btn {
+    @include btn-background(#666);
+}
+*/
+/*extending classes*/
+.cat {
+  background: gray;
+  border: 1px solid red;
+  font-weight: bold;
+  font-size: 50px;
+  color: red;
+  padding: 20px;
+  color: white; }
+
+.dog {
+  background: gray;
+  border: 1px solid red;
+  font-weight: bold;
+  font-size: 50px;
+  color: red;
+  padding: 20px;
+  color: black; }
+
+/*
+.class {
+    @include absCenter;
+}
+*/
+/*
+.class {
+    @include absCenter;
+}
+*/
+a {
+  font-style: italic;
+  text-decoration: none; }
+
+.btn-warning {
+  background-color: #da9412;
+  color: #fff;
+  font-size: 14px; }
+
+.btn-error {
+  background-color: #aa0909;
+  color: #fff;
+  font-size: 14px; }
+
+.error-block {
+  background-color: #aa0909;
+  color: #fff;
+  font-weight: bold;
+  position: relative;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 4px;
+  border: 1px solid #000; }
+
+.box {
+  border-radius: 12px; }
+
+.bordered-box {
+  border-radius: 4px;
+  border: 1px solid #000; }
+
+.box1 {
+  z-index: 1; }
+
+.box2 {
+  z-index: 2; }
+
+.box3 {
+  z-index: 3; }
+
+.bordered-box-green {
+  border-radius: 10px;
+  border: 1px solid #098509;
+  background-color: #098509; }
+
+.shadowed-box {
+  box-shadow: 1px 1px 10px #000;
+  -moz-box-shadow: 1px 1px 10px #000;
+  -webkit-box-shadow: 1px 1px 10px #000;
+  -ms-box-shadow: 1px 1px 10px #000; }
+
+* html body {
+  font-size: 120%; }
+
+/*
+.image-one {
+    @extend %bg-img;
+    background-image:url(../assets/images/image-one.jpg");
+}
+*/
+/*
+@extend %btn;
+*/
+.btn-main, .btn-main:link, .btn-main:hover, .btn-main:focus {
+  color: #fff;
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 100px; }
+
+.btn-main:link {
+  background-color: #ffa600; }
+
+.btn-main:hover, .btn-main:focus {
+  background-color: #82d2e5; }
+
+/* BASE
+========================================================================== */
+h1, h2, h3, h4, h5, h6,
+p,
+blockquote,
+pre,
+dl, dd,
+ol, ul,
+form, legend,
+table, th, td, caption,
+hr,
+figure {
+  margin: 0;
+  padding: 0; }
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0; }
+
+input,
+select,
+textarea {
+  appearance: none;
+  background-clip: border-box;
+  margin: 0;
+  outline: 0;
+  text-align: left;
+  vertical-align: top;
+  width: 100%; }
+
+input[type='checkbox'],
+input[type='radio'] {
+  width: auto;
+  height: auto; }
+
+input[type='checkbox'] {
+  appearance: checkbox; }
+
+input[type='radio'] {
+  appearance: radio; }
+
+textarea,
+select[size],
+select[multiple] {
+  height: auto; }
+
+select::-ms-expand {
+  display: none; }
+
+select:focus::-ms-value {
+  background-color: transparent;
+  color: inherit; }
+
+textarea {
+  resize: vertical; }
+
+input[type='search']::-webkit-search-decoration {
+  display: none; }
+
+button {
+  appearance: none;
+  background: none;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0; }
+
+button,
+.button {
+  cursor: pointer;
+  display: inline-block;
+  font: normal 16px/1 sans-serif;
+  outline: 0;
+  overflow: visible;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: top;
+  width: auto; }
+  button:hover, button:focus,
+  .button:hover,
+  .button:focus {
+    text-decoration: none; }
+
+[disabled],
+[disabled] * {
+  box-shadow: none;
+  cursor: not-allowed;
+  user-select: none; }
+
+html {
+  font-size: 62.5%; }
+
+a {
+  color: #000; }
+  a:hover {
+    color: #ff6600; }
+  a:focus {
+    color: #ff6600; }
+  a:first-child {
+    text-decoration: underline; }
+
+.footer ul li a {
+  color: #eee; }
+  .footer ul li a:not(:last-child) {
+    margin-right: 10px; }
+
+.opensans {
+  font-family: 'Open Sans', sans-serif; }
+
+.lato {
+  font-family: 'Lato', sans-serif; }
+
+* {
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+
+html {
+  position: relative;
+  min-height: 100%; }
+
+body {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
+  color: #666;
+  font-size: 10px; }
+
+.vh-wrapper {
+  height: 100vh;
+  position: relative;
+  width: 100%; }
+
+.vh-50, .absolute-50-middle {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%); }
+
+/*vertically centered content in grid*/
+.row-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.col-flex {
+  display: flex;
+  flex-direction: column; }
+
+/*grid box*/
+.grid-img-box-md {
+  height: 160px;
+  line-height: 150px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  vertical-align: middle;
+  text-align: center;
+  background-color: #f4f4f4;
+  border: 1px solid #eee; }
+
+.grid-img-box-md a {
+  margin: 0 auto !important;
+  display: inline-block; }
+
+.grid-img-box-md img {
+  max-height: 160px;
+  margin: 0 auto !important;
+  display: inline-block !important;
+  max-width: 100%; }
+
+a {
+  color: #666; }
+  a:hover, a:focus, a:active {
+    color: #333; }
+
+.box {
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1); }
+
+.box-2 {
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1); }
+
+.box-3 {
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1); }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+/*
+0 - 600px > phone
+600 - 900px > tablet portrait
+900 - 1200px > tablet landscape
+1200 - 1800px > desktop
+1800 - + > 
+
+important > rem is not best for media queries
+em is the best unit for media queries
+
+*/
+/*=========================*/
+/* usage
+body {
+
+  	 font-size: 62.5%;
+
+  @include respond-phone {
+     font-size: 30%;	
+  }
+}
+*/
+/*=========================*/
+/* usage
+body {
+
+  font-size: 20px;
+
+  @include respond(phone) {
+     font-size: 30%;
+  }
+
+  @include respond(desktop) {
+     font-size: 62.5%;
+  }
+
+}
+*/
+/*
+header {
+	
+	background-image:url('small-image.jpg');
+	
+	@include respond(notmoile) {
+    	background-image:url('large-image.jpg');
+  	}
+
+}
+*/
+@media (min-resolution: 192dpi) {
+  .header {
+    background-image: url("large-image.jpg"); } }
+
+#main {
+  width: 600px; }
+  @media only screen and (max-width: 960px) {
+    #main {
+      width: 100%; } }
+
+body {
+  font-size: 100%; }
+  @media all and (max-width: 1199px) {
+    body {
+      font-size: 100%; } }
+  @media all and (max-width: 991px) {
+    body {
+      font-size: 110%; } }
+  @media all and (max-width: 767px) {
+    body {
+      font-size: 120%; } }
+  @media all and (max-width: 480px) {
+    body {
+      font-size: 130%; } }
+
+.error, .critical-error {
+  color: red;
+  font-size: 14px; }
+
+.critical-error {
+  font-weight: bold;
+  font-size: 20px; }
+
+/* LAYOUT
+========================================================================== */
+/* COMPONENTS / MODULES - Re-usable site elements.
+========================================================================== */
+/* PAGES
+========================================================================== */
+/* THEMES
+========================================================================== */
+/* usage
+a {
+    @include theme-black {
+        color: #000;
+    }
+
+    @include theme-green {
+        color: green;
+    }
+}
+*/
+body {
+  color: #333;
+  color: #000; }
+
+/*
+========================================================================== */

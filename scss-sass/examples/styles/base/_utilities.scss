@@ -1,0 +1,10 @@
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+.critical-error {
+    @extend .error;
+    font-weight: bold;
+    font-size: 20px;
+}

@@ -193,3 +193,175 @@
     @include absCenter;
 }
 */
+
+
+
+
+
+
+
+
+
+
+
+
+// ==== mixins are code blocks for reuse ====
+// ==== not just the single variable but kind multile instructions ====
+// ==== define mixins ====
+@mixin mxn-warning {
+    background-color: #da9412;
+    color: #fff;
+}
+
+@mixin mxn-error {
+    background-color: #aa0909;
+    color: #fff;
+}
+
+// ==== nested mixin
+@mixin mxn-error-block {
+    @include mxn-error;
+    font-weight: bold;
+    position: relative;
+}
+
+// ==== root level mixin ==== styles for a 
+@mixin fancy-links {
+    a {
+        font-style: italic;
+        text-decoration: none
+    }
+}
+
+@mixin absCenter {
+    position: absolute;
+    top:50%; 
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+/*
+.class {
+    @include absCenter;
+}
+*/
+
+// ==== Use mixins ====
+// ==== root level include ====
+@include fancy-links;
+// ==== this wont put styles in .fancy-links a {}
+// ==== this will put styles in a {}
+.btn-warning {
+    @include mxn-warning;
+    font-size: 14px;
+}
+
+.btn-error {
+    @include mxn-error;
+    font-size: 14px;
+}
+
+.error-block {
+    @include mxn-error-block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 4px;
+    border: 1px solid #000;
+}
+
+
+
+
+
+
+
+
+
+// ==== mixins with arguments
+// ==== single argument for border radius
+@mixin rounded ($radius) {
+    border-radius: $radius;
+}
+
+// ==== single argument with default value
+//@mixin mxn-radius ($radius:10px) {border-radius: $radius;}
+@mixin mxn-zindex ($depth:1) {
+    z-index: $depth;
+}
+
+// ==== multiple arguments for border radius and border
+@mixin border-and-radius ($radius, $border) {
+    border-radius: $radius;
+    border: $border;
+}
+
+// ==== single argument with multiple properties - varargs // cross browser multiple prperties
+@mixin mxn-bx-shadow ($shadow...) {
+    box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+    -ms-box-shadow: $shadow;
+}
+
+// ==== single argument output
+.box {
+    @include rounded (12px);
+}
+
+// ==== multiple arguments output
+.bordered-box {
+    @include border-and-radius (4px, 1px solid #000);
+}
+
+// ==== single arguments, default value, and then changing that default value starts
+.box1 {
+    @include mxn-zindex; // .. other properties
+}
+
+.box2 {
+    @include mxn-zindex(2); // .. other properties
+}
+
+.box3 {
+    @include mxn-zindex(3); // .. other properties
+}
+
+// ==== single arguments, default value, and then changing that default value ends
+// ==== multiple arguments - same mixin, different values, different output
+.bordered-box-green {
+    @include border-and-radius (10px, 1px solid #098509);
+    background-color: #098509;
+}
+
+// === vararg usage
+.shadowed-box {
+    @include mxn-bx-shadow (1px 1px 10px #000);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==== Passing content into mixins ====
+// ==== ie6 ====
+@mixin for-ie-6 {
+    // only apply to ie6 - * html is for ie6
+    * html {
+        @content;
+    }
+}
+
+@include for-ie-6 {
+    body {
+        font-size: 120%;
+    }
+}
+

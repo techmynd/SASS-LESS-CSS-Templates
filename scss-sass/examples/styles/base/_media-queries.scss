@@ -1,0 +1,200 @@
+/*
+0 - 600px > phone
+600 - 900px > tablet portrait
+900 - 1200px > tablet landscape
+1200 - 1800px > desktop
+1800 - + > 
+
+important > rem is not best for media queries
+em is the best unit for media queries
+
+*/
+
+/*=========================*/
+
+@mixin respond-phone {
+	@media only screen and (max-width: 600px) { @content };
+}
+
+/* usage
+body {
+
+  	 font-size: 62.5%;
+
+  @include respond-phone {
+     font-size: 30%;	
+  }
+}
+*/
+
+/*=========================*/
+
+// em is the unit to go with media queries
+@mixin respond($breakpoint) {
+
+	@if $breakpoint == tab-landscape {
+		//@media (max-width: 1200px) { @content };
+		@media only screen and (max-width: 75em) { @content }; // 1200px/16px = 75em
+	}
+
+	@if $breakpoint == tab-portrait {
+		//@media (max-width: 900px) { @content };
+		@media only screen and (max-width: 56.25em) { @content }; // 900px/16px = 56.25em
+	}
+
+	@if $breakpoint == phone {
+		//@media (max-width: 600px) { @content };
+		@media only screen and (max-width: 37.5em) { @content }; // 600px/16px = 37.5em
+	}
+
+	@if $breakpoint == desktop {
+		//@media (min-width: 1800px) { @content }; 
+		@media only screen and (min-width: 112.5em) { @content }; // 1800px/16px = 112.5em
+	}
+
+	// if device is not small mobile devive use large images
+
+	@if $breakpoint == notmoile {
+		
+		// resolution greater than mobile 
+		// for images // use large images with this
+		
+		// @media (min-resolution: 192dpi) and (min-width: 600px) { @content };
+
+		// , is 'or' - 37.5em is 600px and -webkit-min-device-pixel-ratio is dafari check/fix
+
+		/*
+		@media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),  
+		@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), 
+        @media only screen and (min-width: 125em) { @content };
+        */
+        @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),  
+		(-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), 
+        (min-width: 125em) { @content };
+
+	}
+
+	@if $breakpoint == nohover {
+		// this is a touch device where we don't have hover - so change rotating stuff
+		@media only screen and (hover: none) { @content };
+	}
+
+
+
+}
+
+/* usage
+body {
+
+  font-size: 20px;
+
+  @include respond(phone) {
+     font-size: 30%;
+  }
+
+  @include respond(desktop) {
+     font-size: 62.5%;
+  }
+
+}
+*/
+
+/*
+header {
+	
+	background-image:url('small-image.jpg');
+	
+	@include respond(notmoile) {
+    	background-image:url('large-image.jpg');
+  	}
+
+}
+*/
+
+
+
+
+// if device is not small mobile devive use large images
+
+@media (min-resolution: 192dpi) {
+	.header {	
+		background-image: url('large-image.jpg');
+	}
+}
+
+
+
+
+
+
+
+
+
+
+$content-width :600px;
+$full-width: 100%;
+
+#main {
+    width: $content-width;
+    @media only screen and (max-width: 960px) {
+        width: $full-width;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==== SASS media queries ====
+@mixin large-screens () {
+    @media all and (max-width:1199px) {
+        @content;
+    }
+}
+
+@mixin medium-screens () {
+    @media all and (max-width:991px) {
+        @content;
+    }
+}
+
+@mixin small-screens () {
+    @media all and (max-width:767px) {
+        @content;
+    }
+}
+
+@mixin tiny-screens () {
+    @media all and (max-width:480px) {
+        @content;
+    }
+}
+
+body {
+    font-size: 100%;
+    @include large-screens {
+        font-size: 100%;
+    }
+    @include medium-screens {
+        font-size: 110%;
+    }
+    @include small-screens {
+        font-size: 120%;
+    }
+    @include tiny-screens {
+        font-size: 130%;
+    }
+}
+
