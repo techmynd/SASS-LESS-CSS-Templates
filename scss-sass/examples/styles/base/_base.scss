@@ -1,5 +1,5 @@
 html {
-	font-size: $root-font-size; // 1 rem = 10px & 10px/16px = 62.5%
+	font-size: $root-font-size; // 1 rem = 10px & 10px/16px*100 = 62.5%
 	position: relative; 
 	min-height: 100%;
 }
@@ -7,7 +7,7 @@ html {
 body {
 	font-size: 1.6rem;
 	font-family: $main-font;
-	line-height: 1.5;
+	line-height: 1.6;
 	color: $main-color;
 	background-color: $body-background-color; 
 	width:100%; 
@@ -21,6 +21,11 @@ body {
     background-color: #000;
   }
 
+  @include respond(phone) {
+     line-height: 1.2;
+     text-align: center;
+  }
+
 }
 
 .clearfix {
@@ -32,7 +37,17 @@ body {
 }
 
 h1 {font-size: 2.6rem;}
-h2 {font-size: 2.4rem;}
+h2 {
+  font-size: 8rem;
+
+  @include respond(tab-portrait) {
+     font-size: 4rem;
+  }
+  @include respond(phone) {
+     font-size: 2.2rem;
+  }
+
+}
 h3 {font-size: 2.2rem;}
 h4 {font-size: 2rem;}
 h5 {font-size: 1.8rem;}
@@ -41,6 +56,7 @@ h6 {font-size: 1.6rem;}
 h1, h2, h3, h4, h5, h6 {
 	font-family: $headings-font;
 	color: $headings-color;
+  text-transform: uppercase;
 }
 
 a {
@@ -75,18 +91,27 @@ a {
 
 /*vertically centered content in grid*/
 .row-flex {
-  flex-wrap: wrap;
+  flex-direction: row;
   display: flex;
   display: -webkit-flex; 
   display: -ms-flexbox; 
-  -webkit-box-align: center; 
+
+  -webkit-box-align: stretch; 
+  -webkit-align-items: stretch; 
+  -ms-flex-align: stretch; 
+  align-items: stretch;
+}
+.col-flex {
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+
   align-items: center;
+  -webkit-box-align: center; 
   -webkit-align-items: center; 
   -ms-flex-align: center; 
-  align-content: center;
 }
-.col-flex {display: flex;}
-
 
 /*grid box*/
 .grid-img-box-md {height:160px; line-height: 150px; display: flex; align-items: center; overflow:hidden; vertical-align:middle; text-align:center; background-color: #f4f4f4; border:1px solid #eee;}

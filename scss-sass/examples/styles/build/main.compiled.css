@@ -221,26 +221,85 @@
 	}	
 }
 */
-.txt-color-fade-down {
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  -moz-background-clip: text;
-  -o-background-clip: text;
-  -ms-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.2)); }
+/*
+Do not target the device - target your design
+0 - 600px > phone
+600 - 900px > tablet portrait
+900 - 1200px > tablet landscape
+1200 - 1800px > desktop
+1800 - + > 
+important > rem is not best for media queries
+em is the best unit for media queries
+*/
+/*=========================*/
+/* usage
+body {
+  font-size: 20px;
+  @include respond(phone) {
+     font-size: 30%;
+  }
+  @include respond(desktop) {
+     font-size: 62.5%;
+  }
+}
+*/
+/*
+header {
+	background-image:url('small-image.jpg');
+	
+  @include respond(notmoile) {
+    	background-image:url('large-image.jpg');
+ 	}
+}
+*/
+/*
+// if device is not small mobile devive use large images
+@media only screen and (min-resolution: 192dpi) {
+	.test-header {	
+		background-image: url('large-image.jpg');
+	}
+}
+// or
+@media only screen and (-webkit-min-device-pixel-ratio: 2.0833333333333335), only screen and (min-resolution: 200dpi){
+    //
+}
+*/
+/* usage
+body {
+    font-size: 100%;
+    @include large-screens {
+        font-size: 100%;
+    }
+    @include medium-screens {
+        font-size: 110%;
+    }
+    @include small-screens {
+        font-size: 120%;
+    }
+    @include tiny-screens {
+        font-size: 130%;
+    }
+}
+*/
+/* Examples
+@mixin respond-phone {
+  @media only screen and (max-width: 600px) { @content };
+}
+// usage
+body {
+     font-size: 62.5%;
+      @include respond-phone {
+        font-size: 30%; 
+      }
+}
 
-.txt-colored-left-to-right {
-  background-image: linear-gradient(to right, #7ed56f, #28b485);
-  background-image: -webkit-linear-gradient(to right, #7ed56f, #28b485);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -moz-background-clip: text;
-  -o-background-clip: text;
-  -ms-background-clip: text;
-  color: transparent; }
-
+#main-test {
+    width: $content-width;
+    @media only screen and (max-width: 960px) {
+        width: $full-width;
+    }
+}
+*/
 /* BASE
 ========================================================================== */
 * {
@@ -337,7 +396,7 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Open Sans", sans-serif;
-  line-height: 1.5;
+  line-height: 1.6;
   color: #666;
   background-color: #fff;
   width: 100%;
@@ -352,6 +411,10 @@ body {
   body ::selection {
     color: #fff;
     background-color: #000; }
+  @media only screen and (max-width: 37.5em) {
+    body {
+      line-height: 1.2;
+      text-align: center; } }
 
 .clearfix:after {
   content: '';
@@ -362,7 +425,13 @@ h1 {
   font-size: 2.6rem; }
 
 h2 {
-  font-size: 2.4rem; }
+  font-size: 8rem; }
+  @media only screen and (max-width: 56.25em) {
+    h2 {
+      font-size: 4rem; } }
+  @media only screen and (max-width: 37.5em) {
+    h2 {
+      font-size: 2.2rem; } }
 
 h3 {
   font-size: 2.2rem; }
@@ -378,7 +447,8 @@ h6 {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Lato", sans-serif;
-  color: #000; }
+  color: #000;
+  text-transform: uppercase; }
 
 a {
   color: #4a39e2;
@@ -411,18 +481,24 @@ a {
 
 /*vertically centered content in grid*/
 .row-flex {
-  flex-wrap: wrap;
+  flex-direction: row;
   display: flex;
   display: -webkit-flex;
   display: -ms-flexbox;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-content: center; }
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch; }
 
 .col-flex {
-  display: flex; }
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center; }
 
 /*grid box*/
 .grid-img-box-md {
@@ -899,85 +975,26 @@ a {
     -webkit-transform: scale(1.2);
     transform: scale(1.2); } }
 
-/*
-Do not target the device - target your design
-0 - 600px > phone
-600 - 900px > tablet portrait
-900 - 1200px > tablet landscape
-1200 - 1800px > desktop
-1800 - + > 
-important > rem is not best for media queries
-em is the best unit for media queries
-*/
-/*=========================*/
-/* usage
-body {
-  font-size: 20px;
-  @include respond(phone) {
-     font-size: 30%;
-  }
-  @include respond(desktop) {
-     font-size: 62.5%;
-  }
-}
-*/
-/*
-header {
-	background-image:url('small-image.jpg');
-	
-  @include respond(notmoile) {
-    	background-image:url('large-image.jpg');
- 	}
-}
-*/
-/*
-// if device is not small mobile devive use large images
-@media only screen and (min-resolution: 192dpi) {
-	.test-header {	
-		background-image: url('large-image.jpg');
-	}
-}
-// or
-@media only screen and (-webkit-min-device-pixel-ratio: 2.0833333333333335), only screen and (min-resolution: 200dpi){
-    //
-}
-*/
-/* usage
-body {
-    font-size: 100%;
-    @include large-screens {
-        font-size: 100%;
-    }
-    @include medium-screens {
-        font-size: 110%;
-    }
-    @include small-screens {
-        font-size: 120%;
-    }
-    @include tiny-screens {
-        font-size: 130%;
-    }
-}
-*/
-/* Examples
-@mixin respond-phone {
-  @media only screen and (max-width: 600px) { @content };
-}
-// usage
-body {
-     font-size: 62.5%;
-      @include respond-phone {
-        font-size: 30%; 
-      }
-}
+.txt-color-fade-down {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  -ms-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.2)); }
 
-#main-test {
-    width: $content-width;
-    @media only screen and (max-width: 960px) {
-        width: $full-width;
-    }
-}
-*/
+.txt-colored-left-to-right {
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-image: -webkit-linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  -ms-background-clip: text;
+  color: transparent; }
+
 .error, .critical-error {
   color: red;
   font-size: 14px; }
