@@ -1,5 +1,39 @@
-$text-color: #666;
+// font-size of the root HTML element
+// set at 100% to leave default sizing (16px)
+// set to 62.5% to use a base font-size of 1rem = 10px (assuming default is 16px)
+// 62.5*16px/100 = 10px
+
+$root-font-size: 62.5%;
+
+// === FONTS ===
+// Body font
+$main-font: 'Open Sans', sans-serif; 
+// Headings font
+$headings-font: 'Lato', sans-serif;
+
+$content-width: 114rem; // 1140px/10 = 114rem
+$full-width: 100%;
+
+// === COLORS ===
+// All colour variable names should come from http://chir.ag/projects/name-that-color/
+$orange: #ffa600; 
+$grey: #f3f3f3; 
+$blue: #82d2e5;
+
+$main-color: #666;
 $body-background-color: #fff;
+
+$color-primary: $orange;
+$color-secondary: $blue;
+$color-tertiary: $grey;
+
+$headings-color: #000;
+$links-color: #4a39e2;
+$links-hover-color: #000;
+
+$link-primary: $orange;
+$link-secondary: $blue;
+$link-tertiary: $grey;
 
 $primary-color: #333;
 $primary-color-light: #666;
@@ -12,54 +46,6 @@ $secondary-color-dark: #000;
 $tertiary-color: #000;
 $tertiary-color-light: #000;
 $tertiary-color-dark: #000;
-
-// font-size of the root HTML element
-// set at 100% to leave default sizing (16px)
-// set to 62.5% to use a base font-size of 1rem = 10px (assuming default is 16px)
-// 62.5*16px/100 = 10px
-
-$html-font-size: 62.5%;
-
-// Body font
-$font-primary: font-family: 'Open Sans', sans-serif; 
-// Headings font
-$font-secondary: font-family: 'Lato', sans-serif;
-
-
-$box-shadow-black: 0 3rem 6rem rgba(0,0,0,0.1);
-$box-shadow-props: 0 3rem 6rem;
-
-/*
-.box {
-    box-shadow: $box-shadow-props rgba($primary-color, 0.1);
-}
-.box-2 {
-    box-shadow: 0 3rem 6rem rgba($primary-color, 0.1);
-}
-.box-3 {
-    box-shadow: $box-shadow-black;
-}
-*/
-
-
-// Colours
-// All colour variable names should come from http://chir.ag/projects/name-that-color/
-
-$orange: #ffa600; 
-$grey: #f3f3f3; 
-$blue: #82d2e5;
-
-$color-primary: $orange;
-$color-secondary: $blue;
-$color-tertiary: $grey;
-
-$link-primary: $orange;
-$link-secondary: $blue;
-$link-tertiary: $grey;
-
-
-$radius-button: 3px;
-$radius-tab: 3px;
 
 // brand colours
 $c--brand-primary: #ff585d;
@@ -85,6 +71,24 @@ $c--youtube: #bb0000;
 $c--pinterest: #cb2027;
 $c--linkedin: #007bb5;
 $c--instagram: #8a3ab9;
+
+$box-shadow-black: 0 3rem 6rem rgba(0,0,0,0.1);
+$box-shadow-props: 0 3rem 6rem;
+
+/* usage
+.box {
+    box-shadow: $box-shadow-props rgba($primary-color, 0.1);
+}
+.box-2 {
+    box-shadow: 0 3rem 6rem rgba($primary-color, 0.1);
+}
+.box-3 {
+    box-shadow: $box-shadow-black;
+}
+*/
+
+$radius-button: 3px;
+$radius-tab: 3px;
 
 // basic spacing units
 $spacing-unit: rem(20px);
@@ -114,61 +118,10 @@ $lh--x-small: 1.1;
 $lh--small: 1.25;
 $lh--large: 1.75;
 
-
-
-/*
-	Easing/Timing
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-// === COLORS ===
-$main-color: #666;
-$headings-color: #000;
-$links-color: #4a39e2;
-$links-hover-color: #000;
-
-// === FONTS ===
-
-$main-font: 'Open Sans', sans-serif;
-$headings-font: 'Montserrat', sans-serif;
-
 // === SIZES ===
-
 $badge-custom-width: 40px;
 $badge-custom-height: 40px;
 
-body {
-    color: $main-color;
-    font-family: $main-font;
-    p {
-      color: $main-color;
-    }
-    a {
-        color: $links-color;
-    }
-    a:hover {
-        color: $links-hover-color;
-    }
-}
+$gutter-horizontal: 1rem; // 16px // 1 x 16
+$gutter-vertical: 1rem; // 16px // 1 x 16
 
-h1 {
-  color: $headings-color;
-  font-family: $headings-font;
-}
-
-
-$gutter-horizontal: 1rem;
-// if we use a variable inside calculation we use #{$varname}
-.col-1-of-2 {
-    width: calc((100% - #{$gutter-horizontal}) / 2);
-}

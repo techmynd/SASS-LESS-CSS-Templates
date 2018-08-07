@@ -1,5 +1,8 @@
 * {
-  font-smooth: always; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  font-smooth: always; 
+  font-smoothing: antialiased; 
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale;
   margin:0; 
   padding:0; 
   box-sizing: border-box;
@@ -8,27 +11,16 @@
   -moz-box-sizing: border-box;
 }
 
-// spacing
-h1, h2, h3, h4, h5, h6,
-p,
-blockquote,
-pre,
-dl, dd,
-ol, ul,
-form, legend,
-table, th, td, caption,
-hr,
-figure {
-	margin: 0;
-	padding: 0;
+*:before, *:after {
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
 //form
-
 fieldset {
 	border: none;
-	margin: 0;
-	padding: 0;
 }
 
 input,
@@ -36,10 +28,8 @@ select,
 textarea {
 	appearance: none;
 	background-clip: border-box;
-	margin: 0;
 	outline: 0;
 	text-align: left;
-	vertical-align: top;
 	width: 100%;
 }
 
@@ -84,22 +74,18 @@ input[type='search']::-webkit-search-decoration {
 	display: none;
 }
 
-
 // button
 button {
 	appearance: none;
 	background: none;
 	border: none;
 	border-radius: 0;
-	margin: 0;
-	padding: 0;
 }
 
 button,
 .button {
 	cursor: pointer;
 	display: inline-block;
-	font: normal 16px/1 sans-serif;
 	outline: 0;
 	overflow: visible;
 	text-align: center;

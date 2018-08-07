@@ -4,11 +4,10 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
-
-/*
+/* usage
 .image-one {
     @extend %bg-img;
-    background-image:url(../assets/images/image-one.jpg");
+    background-image:url(../assets/images/img.jpg");
 }
 */
 
@@ -22,12 +21,9 @@
     text-align: center;
     display: inline-block;
 }
-
-/*
+/* usage
 @extend %btn;
 */
-
-
 
 %btn-placeholder {
 	color: #fff;
@@ -36,9 +32,8 @@
 	text-align: center;
 	border-radius: 100px;
 }
-
-// copy placeholder values to button and its link satte and change hover state and change the bg colors in those extra states only
-.btn-main {
+/* usage
+.some-btn-main {
 		@extend %btn-placeholder;
 	&:link {
 		@extend %btn-placeholder;
@@ -49,3 +44,4 @@
 		background-color: $color-secondary;
 	}	
 }
+*/
