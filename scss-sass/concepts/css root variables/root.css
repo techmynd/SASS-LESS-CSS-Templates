@@ -1,0 +1,8 @@
+:root {
+  --primary-color: #000;
+  --secondary-color: #eee; }
+
+body {
+  color: var(--primary-color); }
+
+/*# sourceMappingURL=root.css.map */
