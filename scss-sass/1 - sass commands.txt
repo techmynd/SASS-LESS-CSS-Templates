@@ -1,0 +1,62 @@
+after you have ruby and sass installed in system, use command line to convert or watch files
+============================================================================================
+
+convert scss to sass
+> sass-convert example.scss example.sass
+
+convert sass to scss
+> sass-convert example.sass example.scss
+
+convert scss to css
+> sass example.scss:example.css
+
+watch scss file and keep it converting to css
+sass --watch example.scss:example.css
+
+watch directory containing multiple scss files and convert them all
+sass --watch SourceDirectoryName:OutPutirectoryName
+
+output css formats
+==================
+
+default css output
+html {
+	bakground: #ccc; }
+
+> sass example.scss:example.css --style compact
+this will produce better than default css formatting
+
+compact css output
+html { bakground: #ccc; }
+
+> sass example.scss:example.css --style compressed
+
+compressed css output
+html {bakground: #ccc;}
+
+> sass example.scss:example.css --style expaneded
+
+expalded css output
+html {
+	bakground: #ccc;
+}
+
+no source map
+=============
+> sass example.scss:example.css --style expaneded --sourcemap=none
+
+convert and watch with no sourcemap
+===================================
+> sass --watch example.scss:example.css --style compact --sourcemap=none
+
+convert and watch whole directory with no sourcemap
+===================================================
+> sass --watch sourceFolder:outputFolder --style compact --sourcemap=none
+
+sourceFolder contains scss files and outputFolder receives output css files
+
+
+
+
+
+
