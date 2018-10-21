@@ -284,6 +284,18 @@ https://engageinteractive.co.uk/blog/top-10-scss-mixins
 
 
 
+for mac, ubuntu or windows process is same
+> install ruby, install sass 
+
+> gem install sass
+or
+> sudo gem install sass
+
+for more on installation > view > sass workflow course
+
+
+
+
 
 
 
